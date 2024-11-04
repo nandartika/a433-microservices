@@ -1,0 +1,7 @@
+WARN[0000] /Users/kartika/Learn/Microservices/a433-microservices/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+item-app-1  | 
+item-app-1  | > docker-software-delivery@1.0.0 start /app
+item-app-1  | > node ./bin/www
+item-app-1  | 
+item-app-1  | NODE_ENV: production
+item-app-1  | Connected to database

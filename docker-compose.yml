@@ -1,0 +1,18 @@
+version: '2'  # Menggunakan Docker Compose versi 2
+
+services:
+  item-app:
+    image: ghcr.io/nandartika/item-app:v1  # Menggunakan image item-app dari GitHub Packages
+    ports:
+      - "80:8080"  # Port mapping agar dapat diakses dari port 80 di host
+    depends_on:
+      - item-db  # Pastikan item-app hanya berjalan setelah item-db diluncurkan
+    restart: always  # Menerapkan restart policy agar container selalu restart ketika terhenti
+
+  item-db:
+    image: mongo:3  # Menggunakan image mongo:3 dari Docker Hub
+    volumes:
+      - app-db:/data/db  # Memakai volume bernama app-db dengan target /data/db di container
+
+volumes:
+  app-db:  # Mendefinisikan volume bernama app-db
